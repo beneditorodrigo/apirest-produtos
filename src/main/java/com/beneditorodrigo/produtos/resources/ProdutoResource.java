@@ -28,4 +28,9 @@ public class ProdutoResource {
     public Produto buscarProduto(@PathVariable long id){
         return produtoRepository.findById(id);
     }
+
+    @DeleteMapping("/produto")
+    public void deletaProduto(@RequestBody Produto produto){
+        produtoRepository.delete(produto);
+    }
 }
